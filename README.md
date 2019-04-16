@@ -1,2 +1,2 @@
-# webApiAuthorize
-# Authorize with JWT
+# Web Api Authorize with JWT
+# ASP Core
