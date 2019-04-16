@@ -1,1 +1,2 @@
 # webApiAuthorize
+# Authorize with JWT
