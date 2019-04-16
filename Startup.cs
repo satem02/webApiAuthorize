@@ -48,15 +48,6 @@ namespace webApiAuthorize
                     ValidIssuer = myOptions.Jwt.Issuer,
                     IssuerSigningKey = new SymmetricSecurityKey (Encoding.UTF8.GetBytes (myOptions.Jwt.Key))
                 };
-                option.Events = new JwtBearerEvents () {
-                    OnTokenValidated = (context) => {
-                        var identity = new ClaimsIdentity (context.Principal.Identity);
-                        var principal = new ClaimsPrincipal (identity);
-                        Thread.CurrentPrincipal = principal;
-                        context.HttpContext.User = principal;
-                        return Task.CompletedTask;
-                    }
-                };
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
