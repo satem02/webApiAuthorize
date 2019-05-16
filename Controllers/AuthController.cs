@@ -9,7 +9,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using webapi_authorize.Model;
-using webapi_authorize.Services.Concrete;
+using webapi_authorize.Services.Abstract;
 
 namespace webapi_authorize.Controllers
 {

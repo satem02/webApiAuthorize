@@ -3,9 +3,9 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using webapi_authorize.Model;
-using webapi_authorize.Services.Concrete;
+using webapi_authorize.Services.Abstract;
 
-namespace webapi_authorize.Services.Abstract
+namespace webapi_authorize.Services.Concrete
 {
     public class UserSessionService : IUserSessionService
     {

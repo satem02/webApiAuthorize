@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using webapi_authorize.Model;
 
-namespace webapi_authorize.Services.Concrete
+namespace webapi_authorize.Services.Abstract
 {
     public interface IUserSessionService
     {
