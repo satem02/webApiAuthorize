@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace InvoicePayment.WebAPI.Controllers
+namespace webapi_authorize.Model
 {
     public class CustomIdentityUser : IdentityUser
     {
