@@ -2,7 +2,7 @@ namespace webapi_authorize.Model
 {
     public class MyOptions
     {
-        public JwtOptions Jwt { get; set; }
+        public JwtOptions JwtOptions { get; set; }
     }
     public class JwtOptions
     {

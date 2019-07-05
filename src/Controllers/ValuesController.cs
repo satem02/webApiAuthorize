@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace webApiAuthorize.Controllers
 {
     [Authorize]
-    [Route ("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    [ApiConventionType (typeof (DefaultApiConventions))]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class ValuesController : ControllerBase
     {
         // GET api/values

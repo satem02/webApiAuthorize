@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  authorize:
+    container_name: "authorize"
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+     - 5006:80
+    environment: 
+     - ASPNETCORE_ENVIRONMENT=Production

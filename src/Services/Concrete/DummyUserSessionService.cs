@@ -7,16 +7,15 @@ using webapi_authorize.Services.Abstract;
 
 namespace webapi_authorize.Services.Concrete
 {
-    public class UserSessionService : IUserSessionService
+    public class DummyUserSessionService : IUserSessionService
     {
         private HttpContext _httpContext;
-        private readonly UserManager<CustomIdentityUser> _userManager;
+        //private readonly UserManager<CustomIdentityUser> _userManager;
         private readonly string PhoneNumber = "PhoneNumber";
 
-        public UserSessionService(IHttpContextAccessor httpContextAccessor, UserManager<CustomIdentityUser> userManager)
+        public DummyUserSessionService(IHttpContextAccessor httpContextAccessor)
         {
             _httpContext = httpContextAccessor.HttpContext;
-            _userManager = userManager;
         }
         public string GetPhoneNumber()
         {
@@ -56,18 +55,16 @@ namespace webapi_authorize.Services.Concrete
         public Claim[] GetClaims(CustomIdentityUser user)
         {
 
-            var role = _userManager.GetRolesAsync(user).Result;
             var claims = new[]{
                     new Claim (ClaimTypes.NameIdentifier,user.Id),
-                    new Claim (ClaimTypes.Email,user.Email),
-                    new Claim (PhoneNumber,user.PhoneNumber),
+                    new Claim (ClaimTypes.Email,user.UserName),
+                    new Claim (PhoneNumber,user.UserName),
                     new Claim (ClaimTypes.Name,user.UserName),
-                    new Claim (ClaimTypes.Role,role.FirstOrDefault())
+                    new Claim (ClaimTypes.Role,"Admin")
             };
 
             return claims;
         }
-
 
 
     }
